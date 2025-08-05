@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carros Estacionados</title>
+  <script src="https://unpkg.com/vue@3"></script>
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <div id="app">
+    <h1>Registrar um novo carro</h1>
+
+    <form @submit.prevent="registrarEntrada">
+      <label for="placa"><h3>Registrar por placa:</h3></label>
+      <input type="text" v-model="novaPlaca" required /> <br>
+      <button type="submit">Registrar Entrada</button>
+    </form>
+    
+
+    <h1>Carros no Estacionamento</h1>
+    
+    <div v-if="infoCarros.length === 0" class="carrosNoEstacionamento">
+      Nenhum carro estacionado no momento.
+    </div>
+
+    <div v-for="infoCarro in infoCarros" :key="infoCarro.id" class="carrosNoEstacionamento">
+      <strong>Funcionario:</strong> {{ infoCarro['funcionario'] }}<br>
+      <strong>Tipo:</strong> {{ infoCarro['tipo'] }}<br>
+      <strong>Marca:</strong> {{ infoCarro['marca'] }}<br>
+      <strong>Modelo:</strong> {{ infoCarro['modelo'] }}<br>
+      <strong>Placa:</strong> {{ infoCarro['placa'] }}<br>
+      <strong>Entrada:</strong> {{ infoCarro['entrou'] }}
+    </div>
+  </div>
+  <h1>Registrar algo novo</h1>
+  <a href="./databaseSetup/funcionariosRegistro.html">Funcionario</a>
+</body>
+</html>

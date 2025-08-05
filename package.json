@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "name": "portariadigital",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "create": "node database/createDatabase.js"
+  },
+  "author": "Anypogers",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^12.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
